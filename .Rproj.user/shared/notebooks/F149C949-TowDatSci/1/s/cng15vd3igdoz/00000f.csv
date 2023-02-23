@@ -1,0 +1,7 @@
+"0","max_Date <- max(adj$start)"
+"0","min_Date <- min(adj$start)"
+"0","test_ts <- ts(adj$logr, "
+"0","              end=c(year(max_Date), month(max_Date)),"
+"0","              start=c(year(min_Date), month(min_Date)),"
+"0","              frequency=12)"
+"0",""

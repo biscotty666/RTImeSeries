@@ -1,0 +1,1 @@
+"0","axis(1, at = 1:12, labels = month.abb, cex = 0.8)"

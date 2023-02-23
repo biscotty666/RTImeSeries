@@ -1,0 +1,8 @@
+library(fpp)
+data("melsyd")
+summary(melsyd)
+plot(melsyd[,"Economy.Class"],
+     main = "Economy class passengers: Melbourne-Sydney",
+     xlab = "Year",
+     ylab = "Thousands") 
+
