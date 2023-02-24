@@ -1,3 +1,4 @@
+"0","library(fpp)"
 "0","plot(elec,"
 "0","     ylab = ""Raw electricity demand"","
 "0","     xlab = ""Year"","

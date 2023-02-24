@@ -1,12 +1,12 @@
 {
-    "id": "C9AD44C6",
-    "path": "~/Learning/R/TDS/TSFR/SimpleFCMethodsAverageNaiveSeasonalNaiveDrift.Rmd",
-    "project_path": "SimpleFCMethodsAverageNaiveSeasonalNaiveDrift.Rmd",
+    "id": "8B004728",
+    "path": "~/Learning/R/TDS/TSFR/EvaluatingFCAccuracy.Rmd",
+    "project_path": "EvaluatingFCAccuracy.Rmd",
     "type": "r_markdown",
-    "hash": "234887433",
+    "hash": "1783580342",
     "contents": "",
-    "dirty": false,
-    "created": 1677214228767.0,
+    "dirty": true,
+    "created": 1677272102260.0,
     "source_on_save": false,
     "relative_order": 2,
     "properties": {
@@ -14,15 +14,15 @@
         "chunk_output_type": "inline",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "0,0",
+        "cursorPosition": "5,0",
         "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1677216397,
+    "lastKnownWriteTime": 1677272124,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1677216397744,
+    "last_content_update": 1677272132015,
     "read_only": false,
     "read_only_alternatives": []
 }

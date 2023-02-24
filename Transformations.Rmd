@@ -1,12 +1,8 @@
 ---
-title: "R Notebook"
+title: "Log and Box-Cox Transforms"
 output: html_notebook
 ---
 [Scott Burk's Video](https://www.youtube.com/watch?v=HzjolWoxjPI&list=PLX-TyAzMwGs-I3i5uiCin37VFMSy4c50F&index=4)
-
-# Transforms
-
-## Log and Box-Cox Transforms
 
 **Box-Cox Transform**
 
@@ -18,12 +14,9 @@ Used to re-scale back to original time series
 
 $y_t = \begin{gather}\begin{cases}exp(w_t) & \text{if  }\lambda = 0;\\(\lambda w_t+1)^{1/\lambda} & \text{otherwise;}\end{cases}\end{gather}$
 
-## The Data
+**Raw data**
 ```{r}
 library(fpp)
-```
-**Raw Data**
-```{r}
 plot(elec,
      ylab = "Raw electricity demand",
      xlab = "Year",
@@ -31,6 +24,7 @@ plot(elec,
 title(main = "Raw", line = -1)
 ```
 Notice the increase in variation over time. This is not desirable so we can use the log.
+
 **Log of data**
 ```{r}
 plot(log(elec),
@@ -40,13 +34,15 @@ plot(log(elec),
 title(main = "Raw", line = -1)
 ```
 This is better but towards the end of the series variability seems to change
-## Box-Cox
+
+**Box-Cox**
+
 We need a lambda. We will let R provide one with `BoxCox.lambda`
 ```{r}
 lambda <- BoxCox.lambda(elec) # 0.265
 plot(BoxCox(elec, lambda))
 ```
-## Calendar Adjustments
+**Calendar Adjustments**
 
 Take into account eg. workdays, variability in days of the month.
 ```{r}
@@ -66,9 +62,9 @@ This clearly gives a smoother time series
 
 Other transformations should be used to take into account for example:
 
-* Population Adjustments to account for variation in population size
+**Population Adjustments** to account for variation in population size
 
-* Inflation Adjustments
+*Inflation Adjustments**
 
 
 
