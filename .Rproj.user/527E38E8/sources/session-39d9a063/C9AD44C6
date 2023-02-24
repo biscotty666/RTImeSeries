@@ -1,28 +1,28 @@
 {
-    "id": "00EEB76E",
-    "path": "~/Learning/R/TDS/TSFR/R02SimpleTSFCUnivariateBivariateACF.Rmd",
-    "project_path": "R02SimpleTSFCUnivariateBivariateACF.Rmd",
+    "id": "C9AD44C6",
+    "path": "~/Learning/R/TDS/TSFR/SimpleFCMethodsAverageNaiveSeasonalNaiveDrift.Rmd",
+    "project_path": "SimpleFCMethodsAverageNaiveSeasonalNaiveDrift.Rmd",
     "type": "r_markdown",
-    "hash": "0",
+    "hash": "234887433",
     "contents": "",
     "dirty": false,
-    "created": 1677192192748.0,
+    "created": 1677214228767.0,
     "source_on_save": false,
-    "relative_order": 1,
+    "relative_order": 2,
     "properties": {
         "tempName": "Untitled1",
         "chunk_output_type": "inline",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "40,0",
-        "scrollLine": "38"
+        "cursorPosition": "0,0",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1677214155,
+    "lastKnownWriteTime": 1677216397,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1677214155424,
+    "last_content_update": 1677216397744,
     "read_only": false,
     "read_only_alternatives": []
 }
