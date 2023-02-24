@@ -3,9 +3,9 @@
     "path": "~/Learning/R/TDS/TSFR/R02SimpleTSFCUnivariateBivariateACF.Rmd",
     "project_path": "R02SimpleTSFCUnivariateBivariateACF.Rmd",
     "type": "r_markdown",
-    "hash": "0",
+    "hash": "166052319",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1677192192748.0,
     "source_on_save": false,
     "relative_order": 1,
@@ -14,15 +14,15 @@
         "chunk_output_type": "inline",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "5,0",
-        "scrollLine": "0"
+        "cursorPosition": "68,0",
+        "scrollLine": "66"
     },
     "folds": "",
-    "lastKnownWriteTime": 1677192246,
+    "lastKnownWriteTime": 1677214155,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1677192252439,
+    "last_content_update": 1677214155424,
     "read_only": false,
     "read_only_alternatives": []
 }

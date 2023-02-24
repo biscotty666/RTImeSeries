@@ -2,4 +2,70 @@
 title: "R Notebook"
 output: html_notebook
 ---
+# Simple Time Series Forecasting/Univariate, Bivariate and ACF
+
+## Explore and prepare the data
+
+```{r}
+# install.packages("corrplot")
+# install.packages("PerformanceAnalytics")
+library(fpp)
+fuel
+```
+```{r}
+nrow(fuel)
+```
+```{r}
+fuel$Litres 
+```
+Let's look at models with Litres less than 2.0
+```{r}
+fuel2 <- fuel[fuel$Litres<2,]
+fuel2
+```
+```{r}
+nrow(fuel2)
+```
+```{r}
+summary(fuel2[,"Carbon"])
+```
+Note the difference in Mean and Median suggesting that the data is skewed left
+```{r}
+sd(fuel2[,"Carbon"])
+```
+```{r}
+ausbeer
+```
+## Autocorrelation
+```{r}
+beer2 <- window(ausbeer, 
+                start = 1992,
+                end = 2006-.1)
+lag.plot(beer2, 
+         lags = 9, 
+         do.lines = FALSE)
+```
+This shows positive correlation every fourth season and some negative correlation with the second prior season.
+**`Acf()`**
+```{r}
+Acf(beer2)
+```
+This plot clearly shows the negative and positive correlations
+
+## No Correlation
+
+```{r}
+set.seed(30)
+x = ts(rnorm(50))
+x
+```
+```{r}
+plot(x, main = "White Noise")
+```
+```{r}
+Acf(x)
+```
+The bars are $\pm (2/sqrt(t))$ where $t$ is the length of the time series
+
+
 
