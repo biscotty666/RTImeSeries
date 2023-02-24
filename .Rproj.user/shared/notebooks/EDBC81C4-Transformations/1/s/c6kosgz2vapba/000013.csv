@@ -1,0 +1,4 @@
+"0","plot(log(elec),"
+"0","     ylab = ""Transformed electricity demand"","
+"0","     xlab = ""Year"","
+"0","     main = ""Transformed monthly electricity demand"")"

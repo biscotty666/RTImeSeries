@@ -1,0 +1,4 @@
+"0","plot(elec,"
+"0","     ylab = ""Raw electricity demand"","
+"0","     xlab = ""Year"","
+"0","     main = ""Raw monthly electricity demand"")"
