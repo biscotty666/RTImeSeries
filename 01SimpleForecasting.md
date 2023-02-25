@@ -5,9 +5,9 @@ Simple Forecasting
   and Seasonality</a>
 - <a href="#monthplot" id="toc-monthplot"><code>monthplot()</code></a>
 - <a href="#jitter-plot" id="toc-jitter-plot">Jitter plot</a>
-  - <a href="#relationship-between-variables-pairs"
-    id="toc-relationship-between-variables-pairs">Relationship between
-    variables <code>pairs()</code></a>
+- <a href="#relationship-between-variables-pairs"
+  id="toc-relationship-between-variables-pairs">Relationship between
+  variables <code>pairs()</code></a>
 
 [Scott Burk](https://www.youtube.com/watch?v=HdYBuDMJ40Y&t=184s)
 
@@ -164,7 +164,7 @@ Here the values are offset (jittered) to more easily see the
 relationship Here we can see the time series relationship between two
 features
 
-## Relationship between variables `pairs()`
+# Relationship between variables `pairs()`
 
 ``` r
 pairs(fuel[,-c(1:2, 4, 7)], pch = 19)
