@@ -28,7 +28,7 @@ $$w_t = \begin{gather}\begin{cases}log(y_t) & \text{if  }\lambda = 0;\\ (y_t^\la
 
 Used to re-scale back to original time series
 
-$$y_t = \begin{gather}\begin{cases}exp(w_t) & \text{if  }\lambda = 0 \\ (\lambda w_t+1)^{1/\lambda} & \text{otherwise}\end{cases}\end{gather}$$
+$$y_t = \begin{gather}\begin{cases}exp(w_t) & \text{if  }\lambda = 0; \\ (\lambda w_t+1)^{1/\lambda} & \text{otherwise;}\end{cases}\end{gather}$$
 
 # Raw data
 
