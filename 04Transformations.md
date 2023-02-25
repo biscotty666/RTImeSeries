@@ -22,7 +22,7 @@ Video](https://www.youtube.com/watch?v=HzjolWoxjPI&list=PLX-TyAzMwGs-I3i5uiCin37
 
 # Box-Cox Transform
 
-$$w_t = \begin{gather}\begin{cases}log(y_t) & \text{if  }\lambda = 0;\\(y_t^\lambda-1)/\lambda & \text{otherwise;}\end{cases}\end{gather}$$
+$$w_t = \begin{gather}\begin{cases}log(y_t) & \text{if  }\lambda = 0;\\ (y_t^\lambda-1)/\lambda & \text{otherwise;}\end{cases}\end{gather}$$
 
 # Inverse or Back-Transform
 
