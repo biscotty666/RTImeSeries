@@ -3,6 +3,7 @@ Simple Forecasting
 
 - <a href="#trend-and-seasonality" id="toc-trend-and-seasonality">Trend
   and Seasonality</a>
+- <a href="#seasonplot" id="toc-seasonplot"><code>seasonplot()</code></a>
 - <a href="#monthplot" id="toc-monthplot"><code>monthplot()</code></a>
 - <a href="#jitter-plot" id="toc-jitter-plot">Jitter plot</a>
 - <a href="#relationship-between-variables-pairs"
@@ -57,6 +58,7 @@ plot(melsyd[,"Economy.Class"],
 ```
 
 ![](01SimpleForecasting_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
 Note the data gap in 1987 and the 0 values in 1989.
 
 A trend is clear from 1990 to 1992.
@@ -116,7 +118,10 @@ plot(a10,
 ```
 
 ![](01SimpleForecasting_files/figure-gfm/unnamed-chunk-5-1.png)<!-- -->
-This plot shows both a trend and seasonality \# `seasonplot()`
+
+This plot shows both a trend and seasonality
+
+# `seasonplot()`
 
 ``` r
 seasonplot(a10,
@@ -128,6 +133,7 @@ seasonplot(a10,
 ```
 
 ![](01SimpleForecasting_files/figure-gfm/unnamed-chunk-6-1.png)<!-- -->
+
 This plot clearly shows the overall upward trend and the fact that each
 year exhibits similar monthly patterns. It does show that 2008 was
 unusual because it decreased Feb-Mar.
@@ -147,6 +153,7 @@ axis(1,
 ```
 
 ![](01SimpleForecasting_files/figure-gfm/unnamed-chunk-7-1.png)<!-- -->
+
 Here we see the mean for each month across the data set. (Not very
 interesting in this case.)
 
@@ -160,9 +167,9 @@ plot(jitter(fuel[,5]),
 ```
 
 ![](01SimpleForecasting_files/figure-gfm/unnamed-chunk-8-1.png)<!-- -->
+
 Here the values are offset (jittered) to more easily see the
-relationship Here we can see the time series relationship between two
-features
+relationships.
 
 # Relationship between variables `pairs()`
 
