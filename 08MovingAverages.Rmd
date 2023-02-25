@@ -1,0 +1,69 @@
+---
+title: "Moving Averages"
+output:
+  html_document:
+    toc: true
+    df_print: paged
+  github_document:
+    toc: true
+---
+
+[Scott Burk's Video](https://www.youtube.com/watch?v=QZtfvXH6mh4&list=PLX-TyAzMwGs-I3i5uiCin37VFMSy4c50F&index=8)
+
+# Moving Average Smoothing
+
+* Moving Average of order $m$
+
+$$\hat{T}_t=\frac{1}{m} \sum_{j=-k}^k y_{t+j}$$
+
+* Weighted Moving Averages
+
+$$\hat{T}_t=\frac{1}{m} \sum_{j=-k}^k a_jy_{t+j}$$
+
+```{r}
+library(fpp2)
+library(ggplot2)
+```
+
+**The Data**
+
+```{r}
+autoplot(elecsales) +
+  xlab("Year") + ylab("Gwh") +
+  ggtitle("Annual Electricity Sales in South Australia")
+```
+
+# Moving Average
+
+```{r}
+ma(elecsales, 5)
+```
+
+
+```{r}
+autoplot(elecsales, series = "Data") +
+  autolayer(ma(elecsales, 5), series = "5-MA") +
+  xlab("Year") + ylab("Gwh") +
+  ggtitle("Annual electricity sales in South Australia") +
+  scale_color_manual(values = c("Data" = "grey50", "5-MA" = "red"),
+                     breaks = c("Data", "5-MA"))
+```
+
+```{r}
+autoplot(elecequip, series = "Data") +
+  autolayer(ma(elecequip, 12), series = "12-MA") +
+  xlab("Year") + ylab("New Orders Index") +
+  ggtitle("Electrical Equipment Manufacturing (Euro Zone)") +
+  scale_color_manual(values = c("Data" = "grey50", "12-MA" = "red"),
+                     breaks = c("Data", "12-MA"))
+```
+
+This removes variability from the data.
+
+**NB** using odd order makes the average symmetric
+
+
+
+
+
+
