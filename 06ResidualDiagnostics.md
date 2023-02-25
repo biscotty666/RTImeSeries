@@ -4,20 +4,27 @@ Residual Diagnostics
 [Scott Burk’s
 Video](https://www.youtube.com/watch?v=IGlEaak2Lfo&list=PLX-TyAzMwGs-I3i5uiCin37VFMSy4c50F&index=6)
 
-- Forecast Error (Residual): $e_i = y_i - \hat{y}_i$
+- Forecast Error (Residual)
 
-- Essential Forecasting Method: $e_i \sim i.i.d.(0,)$ (i.i.d.:
-  independently identically distributed)
+$$e_i = y_i - \hat{y}_i$$
 
+- Essential Forecasting Method
   - Residuals are uncorrelated
   - Residuals have zero mean
 
-- Essential and Useful: $e_i \sim i.i.d. N(0,\sigma^2)$
+$$e_i \sim i.i.d.(0,)$$
 
+(i.i.d.: independently identically distributed)
+
+- Essential and Useful:
   - Residuals have constant variance
   - Residuals are Normally distributed
 
-- Random Walk, Naive Method: $e_t=y_t-\hat{y}_t=y_t-y_{t-1}$
+$$e_i \sim i.i.d. N(0,\sigma^2)$$
+
+- Random Walk, Naive Method:
+
+$$e_t=y_t-\hat{y}_t=y_t-y_{t-1}$$
 
 ``` r
 library(fpp)
@@ -65,6 +72,7 @@ plot(res,
 ```
 
 ![](06ResidualDiagnostics_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
+
 This looks like noise. Let’s check the ACF
 
 ``` r
@@ -72,6 +80,7 @@ Acf(res, main = "ACF of residuals")
 ```
 
 ![](06ResidualDiagnostics_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
 This confirms the randomness
 
 ``` r
@@ -81,6 +90,7 @@ hist(res,
 ```
 
 ![](06ResidualDiagnostics_files/figure-gfm/unnamed-chunk-4-1.png)<!-- -->
+
 Not a normal distribution.
 
 **Box-Pierce and Ljung-Box Tests**
@@ -114,5 +124,5 @@ Box.test(res,
     ## data:  res
     ## X-squared = 11.088, df = 10, p-value = 0.3507
 
-This tests fail to reject the null hypothesis that there is no
+These tests fail to reject the null hypothesis that there is no
 correlation in the data.
