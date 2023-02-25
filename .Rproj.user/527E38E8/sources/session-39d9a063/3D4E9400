@@ -1,0 +1,28 @@
+{
+    "id": "3D4E9400",
+    "path": "~/Learning/R/TDS/TSFR/6ResidualDiagnostics.Rmd",
+    "project_path": "6ResidualDiagnostics.Rmd",
+    "type": "r_markdown",
+    "hash": "0",
+    "contents": "",
+    "dirty": false,
+    "created": 1677299060144.0,
+    "source_on_save": true,
+    "relative_order": 3,
+    "properties": {
+        "tempName": "Untitled1",
+        "chunk_output_type": "inline",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "67,87",
+        "scrollLine": "53"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1677301993,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1677301993220,
+    "read_only": false,
+    "read_only_alternatives": []
+}
