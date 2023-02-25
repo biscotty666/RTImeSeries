@@ -1,5 +1,5 @@
 ---
-title: "Classical Decomposition"
+title: "Classical Decomposition: Additive and Multiplicative"
 output:
   html_document:
     toc: true

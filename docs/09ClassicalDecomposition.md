@@ -1,4 +1,4 @@
-Classical Decomposition
+Classical Decomposition: Additive and Multiplicative
 ================
 
 - <a href="#additive-decomposition"

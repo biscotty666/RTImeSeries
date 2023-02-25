@@ -1,0 +1,40 @@
+---
+title: "SEATS Decomposition"
+output:
+  html_document:
+    toc: true
+    df_print: paged
+  github_document:
+    toc: true
+---
+
+[Scott Burk's Video](https://www.youtube.com/watch?v=673gF-olKfw&list=PLX-TyAzMwGs-I3i5uiCin37VFMSy4c50F&index=11)
+
+# Seasonal Extraction in ARIMA Time Series (SEATS)
+
+* Developed by the Bank of Spain
+* Widely used by government agencies globally
+* Applicable only to quarterly and monthly data
+* [Seasonal website](http://www.seasonal.website/)
+* Includes `seasonal()`, `trendcycle()`, `remainder()`, `seasadj()`
+
+```{r}
+library(fpp2)
+library(seasonal)
+```
+```{r}
+elecequip %>%
+  seas() %>%
+    autoplot() +
+    ggtitle("SEATS Decomposition of Electrical Equipment Index")
+```
+
+```{r}
+elecequip %>% 
+  decompose(type = "multiplicative") %>%
+    autoplot() +
+    xlab("Year") +
+    ggtitle("Classical Multiplicative Decomposition of Electrical Equipment Index")
+```
+
+
