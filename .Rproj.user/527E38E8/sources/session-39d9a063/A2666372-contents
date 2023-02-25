@@ -1,0 +1,87 @@
+---
+title: "Simple Forecasting"
+output:
+  html_document:
+    toc: true
+    df_print: paged
+  github_document:
+    toc: true
+---
+
+[Scott Burk](https://www.youtube.com/watch?v=HdYBuDMJ40Y&t=184s)
+
+```{r}
+library(fpp)
+```
+**The Data**
+```{r}
+str(melsyd)
+```
+
+```{r}
+plot(melsyd[,"Economy.Class"],
+     main = "Economy class passengers: Melbourne-Sydney",
+     xlab = "Year",
+     ylab = "Thousands") 
+```
+Note the data gap in 1987 and the 0 values in 1989.
+
+A trend is clear from 1990 to 1992.
+
+No apparent seasonality.
+
+```{r}
+head(a10, n = -1L)
+```
+# Trend and Seasonality
+```{r}
+plot(a10,
+     ylab = "$ million",
+     xlab = "Year",
+     main = "Antidiabetic drug sales")
+```
+This plot shows both a trend and seasonality
+# `seasonplot()`
+```{r}
+seasonplot(a10,
+     ylab = "$ million", xlab = "Year",
+     main = "Antidiabetic drug sales",
+     year.labels = TRUE, year.labels.left = TRUE,
+     pch = 19,
+     col = 1:20) 
+```
+This plot clearly shows the overall upward trend and the fact that each year
+exhibits similar monthly patterns. It does show that 2008 was unusual because it decreased Feb-Mar.
+
+# `monthplot()`
+
+```{r}
+monthplot(a10,
+          ylab = "$ million",
+          xlab = "Month",
+          xaxt = "n",
+          main = "Seasonal deviation plot: ADB Drug Sales")
+axis(1, 
+     at = 1:12, 
+     labels = month.abb, 
+     cex = 0.8) # cex here sets the magnification used for x axis
+```
+Here we see the mean for each month across the data set. (Not very interesting in this case.)
+
+# Jitter plot
+```{r}
+plot(jitter(fuel[,5]),
+            jitter(fuel[,8]),
+            xlab = "city mpg",
+            ylab = "Carbon Footprint")
+```
+Here the values are offset (jittered) to more easily see the relationship
+Here we can see the time series relationship between two features
+
+## Relationship between variables `pairs()`
+```{r}
+pairs(fuel[,-c(1:2, 4, 7)], pch = 19)
+```
+
+
+
