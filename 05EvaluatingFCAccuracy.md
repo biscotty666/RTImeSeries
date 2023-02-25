@@ -45,7 +45,9 @@ Careful that $y$ is meaningful and not zero
 <p class="text-center">
 Percentage Errors
 </p>
+
 $$p_i = 100e_i/y_i$$
+
 <p class="text-center">
 Mean Absolute Percentage Error
 </p>
