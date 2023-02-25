@@ -1,0 +1,69 @@
+---
+title: "Seasonal and Trend Decomposition with Loess (STL)"
+output:
+  github_document:
+    toc: true
+  html_document:
+    toc: true
+    df_print: paged
+---
+
+[Scott Burk's Video](https://www.youtube.com/watch?v=DZ403FNW2YI&list=PLX-TyAzMwGs-I3i5uiCin37VFMSy4c50F&index=12)
+
+* Handles any type of seasonality, not just monthly and quarterly
+* The seasonal component can vary over time with a rate of change controlled by the user
+* The smoothness of the trend cycle can be controlled by the user
+* It can be robust to outliers
+* Does not handle calendar variation automatically
+* Only provides additive decompositions
+
+```{r}
+library(fpp2)
+```
+```{r}
+elecequip %>%
+  stl(t.window = 13,
+      s.window = "periodic",
+      robust = TRUE) %>%
+  autoplot()
+```
+
+We still have a patch of remainders in 2009 that is unpleasant
+
+```{r}
+elecequip %>%
+  stl(t.window = 17,
+      s.window = "periodic",
+      robust = TRUE) %>%
+  autoplot()
+```
+
+Even worse.
+
+```{r}
+elecequip %>%
+  stl(t.window = 7,
+      s.window = "periodic",
+      robust = TRUE) %>%
+  autoplot()
+```
+
+Much better by adjusting the trend window.
+
+```{r}
+elecequip %>%
+  stl(t.window = 7,
+      s.window = 7,
+      robust = TRUE) %>%
+  autoplot()
+```
+
+Explicitly setting the seasonality window improved the remaineders even more although there are still sharp spikes.
+
+```{r}
+elecequip %>%
+  stl(t.window = 7,
+      s.window = 17,
+      robust = TRUE) %>%
+  autoplot()
+```

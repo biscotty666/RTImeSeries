@@ -10,6 +10,7 @@
 [Residual Diagnostics](docs/06ResidualDiagnostics.md) |
 [Time Series Components](docs/07TimeSeriesComponents.md) |
 [Moving Averages](docs/08MovingAverages.md) |
-[Classical Decomposition: Additive and Multiplicative](docs/09ClassicalDecomposition.md)
-[X11 Decomposition](docs/10X11Decomposition.md)
-[SEATS Decomposition](docs/11SEATSDecomposition.md)
+[Classical Decomposition: Additive and Multiplicative](docs/09ClassicalDecomposition.md) |
+[X11 Decomposition](docs/10X11Decomposition.md) |
+[SEATS Decomposition](docs/11SEATSDecomposition.md) |
+[STL Decomposition (Loess)](docs/12STLDecomposition.md)
