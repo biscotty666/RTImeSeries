@@ -1,25 +1,26 @@
 ---
 title: "Log and Box-Cox Transforms"
 output:
+  github_document:
+    toc: true
   html_document:
     toc: true
     df_print: paged
-  github_document:
-    toc: true
 ---
 [Scott Burk's Video](https://www.youtube.com/watch?v=HzjolWoxjPI&list=PLX-TyAzMwGs-I3i5uiCin37VFMSy4c50F&index=4)
 
-**Box-Cox Transform**
+# Box-Cox Transform
 
-$w_t = \begin{gather}\begin{cases}log(y_t) & \text{if  }\lambda = 0;\\(y_t^\lambda-1)/\lambda & \text{otherwise;}\end{cases}\end{gather}$
+$$w_t = \begin{gather}\begin{cases}log(y_t) & \text{if  }\lambda = 0;\\(y_t^\lambda-1)/\lambda & \text{otherwise;}\end{cases}\end{gather}$$
 
-**Inverse or Back-Transform**
+# Inverse or Back-Transform
 
 Used to re-scale back to original time series
 
-$y_t = \begin{gather}\begin{cases}exp(w_t) & \text{if  }\lambda = 0;\\(\lambda w_t+1)^{1/\lambda} & \text{otherwise;}\end{cases}\end{gather}$
+$$y_t = \begin{gather}\begin{cases}exp(w_t) & \text{if  }\lambda = 0;\\(\lambda w_t+1)^{1/\lambda} & \text{otherwise;}\end{cases}\end{gather}$$
 
-**Raw data**
+# Raw data
+
 ```{r}
 library(fpp)
 plot(elec,
@@ -28,9 +29,10 @@ plot(elec,
      main = "Raw monthly electricity demand")
 title(main = "Raw", line = -1)
 ```
+
 Notice the increase in variation over time. This is not desirable so we can use the log.
 
-**Log of data**
+# Log of data
 ```{r}
 plot(log(elec),
      ylab = "Transformed electricity demand",
@@ -38,18 +40,22 @@ plot(log(elec),
      main = "Transformed monthly electricity demand")
 title(main = "Raw", line = -1)
 ```
+
 This is better but towards the end of the series variability seems to change
 
-**Box-Cox**
+# Box-Cox
 
 We need a lambda. We will let R provide one with `BoxCox.lambda`
+
 ```{r}
 lambda <- BoxCox.lambda(elec) # 0.265
 plot(BoxCox(elec, lambda))
 ```
-**Calendar Adjustments**
+
+# Calendar Adjustments
 
 Take into account eg. workdays, variability in days of the month.
+
 ```{r}
 monthdays <- rep(c(31,28,31,30,31,30,31,31,30,31,30,31),14) # 14 years of data
 monthdays[26 + (4*12)*(0:2)] <- 29
@@ -63,13 +69,14 @@ plot(milk/monthdays,
      ylab = "Pounds",
      xlab = "Years")
 ```
+
 This clearly gives a smoother time series
 
 Other transformations should be used to take into account for example:
 
-**Population Adjustments** to account for variation in population size
+# Population Adjustments to account for variation in population size
 
-*Inflation Adjustments**
+# Inflation Adjustments
 
 
 
