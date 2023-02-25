@@ -1,6 +1,0 @@
-"0","seasonplot(a10,"
-"0","     ylab = ""$ million"", xlab = ""Year"","
-"0","     main = ""Antidiabetic drug sales"","
-"0","     year.labels = TRUE, year.labels.left = TRUE,"
-"0","     pch = 19,"
-"0","     col = 1:20) "

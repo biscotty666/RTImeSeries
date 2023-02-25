@@ -1,6 +1,0 @@
-"0","beer2 <- window(ausbeer, "
-"0","                start = 1992,"
-"0","                end = 2006-.1)"
-"0","beerfit1 <- meanf(beer2, h=11)"
-"0","beerfit2 <- naive(beer2, h=11)"
-"0","beerfit3 <- snaive(beer2, h=11)"

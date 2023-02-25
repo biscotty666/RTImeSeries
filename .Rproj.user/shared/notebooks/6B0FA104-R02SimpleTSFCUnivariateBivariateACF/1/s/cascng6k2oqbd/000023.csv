@@ -1,6 +1,0 @@
-"0","beer2 <- window(ausbeer, "
-"0","                start = 1992,"
-"0","                end = 2006-.1)"
-"0","lag.plot(beer2, "
-"0","         lags = 9, "
-"0","         do.lines = FALSE)"

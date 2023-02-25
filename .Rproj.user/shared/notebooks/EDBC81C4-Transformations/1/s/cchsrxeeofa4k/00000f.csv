@@ -1,2 +1,0 @@
-"0","lambda <- BoxCox.lambda(elec)"
-"0","plot(BoxCox(elec, lambda))"

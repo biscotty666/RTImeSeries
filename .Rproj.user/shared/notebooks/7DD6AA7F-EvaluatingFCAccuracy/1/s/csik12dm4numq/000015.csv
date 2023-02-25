@@ -1,4 +1,0 @@
-"0","legend(""topright"", "
-"0","       lty = 1,"
-"0","       col = c(4,2,3),"
-"0","       legend = c(""Mean Method"", ""Naive Method"", ""Seasonal Naive Method""))"

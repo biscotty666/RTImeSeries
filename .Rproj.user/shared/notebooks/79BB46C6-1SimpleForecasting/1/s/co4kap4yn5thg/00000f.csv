@@ -1,4 +1,0 @@
-"0","plot(jitter(fuel[,5]),"
-"0","            jitter(fuel[,8]),"
-"0","            xlab = ""city mpg"","
-"0","            ylab = ""Carbon Footprint"")"
