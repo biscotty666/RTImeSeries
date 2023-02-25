@@ -1,0 +1,7 @@
+"0","dj2 <- window(dj, end = 250)"
+"0",""
+"0","plot(dj2,"
+"0","     main = ""Dow Jones Index (daily ending 15 Jul 94)"","
+"0","     ylab = """","
+"0","     xlab = ""Day"","
+"0","     xlim = c(2, 290))"

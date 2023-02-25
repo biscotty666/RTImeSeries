@@ -1,0 +1,4 @@
+"0","axis(1, "
+"0","     at = 1:12, "
+"0","     labels = month.abb, "
+"0","     cex = 0.8) # cex here sets the magnification used for x axis"
