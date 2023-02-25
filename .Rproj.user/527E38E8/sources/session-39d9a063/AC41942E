@@ -1,0 +1,27 @@
+{
+    "id": "AC41942E",
+    "path": "~/Learning/R/TDS/TSFR/5EvaluatingFCAccuracy.Rmd",
+    "project_path": "5EvaluatingFCAccuracy.Rmd",
+    "type": "r_markdown",
+    "hash": "3545078562",
+    "contents": "",
+    "dirty": false,
+    "created": 1677287777131.0,
+    "source_on_save": false,
+    "relative_order": 2,
+    "properties": {
+        "chunk_output_type": "inline",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "2,8",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1677287791,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1677287791883,
+    "read_only": false,
+    "read_only_alternatives": []
+}
