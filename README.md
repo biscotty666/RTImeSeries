@@ -10,4 +10,4 @@
 [Residual Diagnostics](docs/06ResidualDiagnostics.md) |
 [Time Series Components](docs/07TimeSeriesComponents.md) |
 [Moving Averages](docs/08MovingAverages.md) |
-[Classical Decomposition](docs/09ClassicalDecomposition.md)
+[Classical Decomposition: Additive, Multiplicative, X11](docs/10X11Decomposition.md)
