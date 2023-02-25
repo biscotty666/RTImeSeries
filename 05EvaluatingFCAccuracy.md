@@ -20,14 +20,18 @@ Video](https://www.youtube.com/watch?v=PvaKMQBR6nA&list=PLX-TyAzMwGs-I3i5uiCin37
 
 ## Forecast Error
 
-$$e_i=y_i-\hat{y_i}$$ $$\hat{y} = prediction$$
+$$e_i=y_i-\hat{y_i}$$
+
+$$\hat{y} = prediction$$
 
 ## Scale Dependent Measures of Error
 
 <p class="text-center">
 Mean Absolute Error
 </p>
+
 $$MAE = mean(|e_i|)$$
+
 <p class="text-center">
 Root Mean Absolute Error
 </p>
