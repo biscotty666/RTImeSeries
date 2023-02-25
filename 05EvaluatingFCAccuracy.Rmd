@@ -1,11 +1,11 @@
 ---
 title: "Evaluating Forecast Accuracy"
 output:
-  github_document:
-    toc: true
   html_document:
     toc: true
     df_print: paged
+  github_document:
+    toc: true
 ---
 
 [Scott Burk's Video](https://www.youtube.com/watch?v=PvaKMQBR6nA&list=PLX-TyAzMwGs-I3i5uiCin37VFMSy4c50F&index=5)
@@ -45,6 +45,7 @@ $$MAPE=mean(|p_i|)$$
 <p class="text-center">Mean Absolute Scaled Error</p>
 
 $$MASE=mean(|q_t|)$$
+
 <p class="text-center">Where</p>
 
 $$q_t = \frac{e_t}{\frac{1}{n-1}\sum_{i=2}^n|y_i-y_{i-1}|}$$

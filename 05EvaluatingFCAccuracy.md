@@ -59,7 +59,9 @@ $$MAPE=mean(|p_i|)$$
 <p class="text-center">
 Mean Absolute Scaled Error
 </p>
+
 $$MASE=mean(|q_t|)$$
+
 <p class="text-center">
 Where
 </p>
