@@ -13,4 +13,5 @@
 [Classical Decomposition: Additive and Multiplicative](docs/09ClassicalDecomposition.md) |
 [X11 Decomposition](docs/10X11Decomposition.md) |
 [SEATS Decomposition](docs/11SEATSDecomposition.md) |
-[STL Decomposition (Loess)](docs/12STLDecomposition.md)
+[STL Decomposition (Loess)](docs/12STLDecomposition.md) |
+[Basic Forecasting with Decomposition](docs/13FCWithDecomposition.md) 

@@ -1,6 +1,0 @@
-"0","adj <- select(Sale_of_fish, -c(""year"", ""month"", ""end.of.period"", ""value..E."", ""unsold..Kg.""))"
-"0","adj$sales <- as.numeric(gsub(' ', '', adj$sales))"
-"0","adj$start <- dmy(adj$start)"
-"0",""
-"0","adj$logr <- log(lag(adj$sales)) - log(adj$sales)"
-"0","head(adj)"

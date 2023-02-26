@@ -1,3 +1,0 @@
-"0","Sale_of_fish <- read.csv('https://raw.githubusercontent.com/quaesito/time-series-forecast-R/main/Fish%20dataset.csv')"
-"0",""
-"0","head(Sale_of_fish)"
