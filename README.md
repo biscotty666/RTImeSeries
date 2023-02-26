@@ -20,4 +20,6 @@
 
 ## Forecasting
 
-[Basic Forecasting with Decomposition](docs/13FCWithDecomposition.md) 
+[Forecasting with Decomposition](docs/13FCWithDecomposition.md) |
+[Forecasting with Exponential Smoothing](docs/14FCWithExponentialSmoothing.md) |
+

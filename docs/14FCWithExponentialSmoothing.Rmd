@@ -10,7 +10,7 @@ output:
 
 [Scott Burk's Video](https://www.youtube.com/watch?v=aquvCL3_6pI&list=PLX-TyAzMwGs-I3i5uiCin37VFMSy4c50F&index=14)
 
-$$\hat{y}_{T+1/T}= \alpha y_T+ \alpha(1- \alpha)y_{T-1}+ \alpha (1- \alpha )^2y_{T-2}+...$$
+
 
 * $0 <= \alpha <=1$ is the smoothing parameter
   * Larger $\alpha$ gives more weight on $y_T$ and quicker dampening, smaller is closer to equal weight
@@ -18,13 +18,72 @@ $$\hat{y}_{T+1/T}= \alpha y_T+ \alpha(1- \alpha)y_{T-1}+ \alpha (1- \alpha )^2y_
 * Weights decay exponentially
 * Simple Exponential Smoothing (SES)
   * Applicable when no clear trend or seasonal pattern exists
-* Some variations
+* Weighted Average method
+
+$$
+\begin{equation*}
+\begin{aligned}
+\hat{y}_{2/1} &= \alpha y_1+ (1- \alpha)l_0 \\
+\hat{y}_{3/2} &= \alpha y_2+ (1- \alpha)\hat{y}_{2/1} \\
+\hat{y}_{4/3} &= \alpha y_3+ (1- \alpha)\hat{y}_{3/2} \\
+\vdots \\
+\hat{y}_{T/T-1} &= \alpha y_{T-1}+ (1- \alpha)\hat{y}_{T-1/T-2} \\
+\hat{y}_{T+1/T} &= \alpha y_T+ (1- \alpha)\hat{y}_{T/T-1} \\
+\end{aligned}
+\end{equation*}
+\hat{y}_{T+1/T} = \sum_{j=0}^{T-1} \alpha (1-\alpha)^jy_{T-j} + (1-\alpha)^Tl_0 
+$$
+
+* Component Form
+
+  * Forecast equation: $\hat{y}_{t-h/t}=L_t$
+  
+  * Smoothing equation: $L_t=\alpha y_t + (1-\alpha)L_{t-1}$
+
+* Flat Forecasts
+
+$$\hat{y}_{T+h/T}=\hat{y}_{T+1/T}=l_T, \quad  h = 2,3,\dots$$
+
+* Other variations
   * Naive method
   * Average method
-  * Weighted Average method
+
+* Optimization to determine alpha and initial level
+
+$$SSE = \sum_{t=1}^T(y_t-\hat{y}_{t/t-1})^2=\sum_{t=1}^Te_t^2$$
+
+```{r}
+library(fpp2)
+
+oildata <- window(oil, start = 1996)
+autoplot(oildata) +
+  ylab("Oil (millions of tonnes)") +
+  xlab("Year")
+```
+
+This data has no trend or seasonality so lends itself to exponential smoothing.
+
+Estimate the parameters:
+
+```{r}
+fc <- ses(oildata, h=5)
+round(accuracy(fc), 2)
+```
 
 
+```{r}
+oilest <- ses(oildata, initial = "simple", h = 4)
+oilest_alpha <- oilest$model$par["alpha"]
+oilest_alpha
+```
 
+```{r}
+forecast(fc)
+```
+
+```{r}
+summary(fc)
+```
 
 
 
