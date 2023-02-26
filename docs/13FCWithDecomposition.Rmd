@@ -1,11 +1,11 @@
 ---
 title: "Forecasting with Decomposition"
 output:
-  github_document:
-    toc: true
   html_document:
     toc: true
     df_print: paged
+  github_document:
+    toc: true
 ---
 
 [Scott Burk's Video](https://www.youtube.com/watch?v=IDjCSDegtGY&list=PLX-TyAzMwGs-I3i5uiCin37VFMSy4c50F&index=13)
@@ -53,6 +53,10 @@ fit %>% forecast(method = "naive") %>%
   ylab("New orders index")
 ```
 
+```{r}
+fcast <- stlf(elecequip, method = "naive")
+fcast
+```
 
 
 
