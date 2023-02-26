@@ -21,5 +21,7 @@
 ## Forecasting
 
 [Forecasting with Decomposition](docs/13FCWithDecomposition.md) |
-[Forecasting with Exponential Smoothing](docs/14FCWithExponentialSmoothing.md) |
+[Forecasting with Exponential Smoothing](docs/14FCWithExponentialSmoothing.md)
+
+Based on a [Video Series](https://www.youtube.com/playlist?list=PLX-TyAzMwGs-I3i5uiCin37VFMSy4c50F) by Scott Burk.
 
