@@ -50,8 +50,7 @@ fit %>% seasadj() %>% naive() %>%
   autoplot() +
   guides(colour = guide_legend(title = "Forecast")) +
   labs(level = "Level") +
-  ylab("New orders index") +
-  ggtitle("Naive forecasts of seasonally adjusted data")
+  ylab("New orders index") 
 ```
 
 ![](13FCWithDecomposition_files/figure-gfm/unnamed-chunk-2-1.png)<!-- -->
@@ -59,8 +58,7 @@ fit %>% seasadj() %>% naive() %>%
 ``` r
 fit %>% forecast(method = "naive") %>%
   autoplot() +
-  ylab("New orders index") +
-  ggtitle("Naive forecasts of seasonally adjusted data")
+  ylab("New orders index")
 ```
 
 ![](13FCWithDecomposition_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
