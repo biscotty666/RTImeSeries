@@ -10,6 +10,115 @@ output:
 
 [Scott Burk's Video](https://www.youtube.com/watch?v=Nrt3kNEHb4I&list=PLX-TyAzMwGs-I3i5uiCin37VFMSy4c50F&index=15)
 
+# The Method
 
+Consists of a forecast equation and two smoothing equations
+
+$$
+\begin{align}
+\text{Forecast equation} \quad & \hat{y}_{t+h/t} = l_t + hb_t \\
+\text{Level equation} \quad & l_t = \alpha y_t+(1-\alpha)(l_{t-1} + b_{t-1}) \\
+\text{Trend equation} \quad & b_t=\beta^*(l_1-l_{1-t})+(1-\beta^*)b_{t-1}
+\end{align}
+$$
+
+$\alpha$ and $\beta^*$ are smoothing functions with domain $[0,1]$
+
+```{r}
+library(fpp2)
+ausair
+```
+
+```{r}
+air <- window(ausair, start = 1990)
+fc <- holt(air, h=5)
+summary(fc)
+```
+
+# Damped trend methods
+
+Adds an additional time-dampening parameter $\phi$
+
+$$
+\begin{align}
+\hat{y}_{t+h/t} &= l_t+(\phi+\phi^2+\dots+\phi^h)g_1 \\
+l_t &= \alpha y_t + (1 - \alpha)(l_{t-1} + \phi b_{t-1}) \\
+b_t &= \beta^*(l_1 - l_{t-1}) + (1 - \beta^*)\phi b_{t-1})
+\end{align}
+$$
+
+```{r}
+fc <- holt(air, h=5)
+fc2 <- holt(air, damped = TRUE, phi =  0.9, h = 15)
+autoplot(air) +
+  autolayer(fc, series = "Holt's Method", PI = FALSE) +
+  autolayer(fc2, series = "Damped Holt's Method", PI = FALSE) +
+  ggtitle("Forecasts from Holt's Method") +
+  ylab("Air passengers in Australia (millions)") +
+  guides(colour = guide_legend(title = "Forecast"))
+```
+
+# Combine with smoothing
+
+```{r}
+autoplot(livestock) +
+  xlab("Year") +
+  ylab("Sheep in Asia (millions)")
+```
+
+## Cross Validation
+
+```{r}
+e_ses <- tsCV(livestock, ses, h=1)
+e_holt <- tsCV(livestock, holt, h=1)
+e_holtd <- tsCV(livestock, holt, damped=TRUE, h=1)
+```
+
+`tsCV()` does times series cross-validataion
+
+## Mean squared error
+
+```{r}
+mean(e_ses^2, na.rm = TRUE)
+```
+```{r}
+mean(e_holt^2, na.rm = TRUE)
+```
+```{r}
+mean(e_holtd^2, na.rm = TRUE)
+```
+
+The dampened Holt method gave the least mean squared error
+
+## Mean Absolute Error
+
+```{r}
+mean(abs(e_ses), na.rm = TRUE)
+```
+
+```{r}
+mean(abs(e_holt), na.rm = TRUE)
+```
+
+```{r}
+mean(abs(e_holtd), na.rm = TRUE)
+```
+
+```{r}
+fc <- holt(livestock, damped=TRUE)
+fc
+```
+
+```{r}
+fc$model
+```
+
+$\alpha$ and $\phi$ are close to 1 and $\beta$ is close to 0
+
+```{r}
+autoplot(fc) +
+  xlab("Year") +
+  ylab("Sheep in Asia (millions)")
+```
 
 
